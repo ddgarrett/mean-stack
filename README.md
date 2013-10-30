@@ -11,4 +11,4 @@ MongoDB
 
 But  no one knows  it by that name, and MEAN seems to be taking off.
 
-So here it is - sampl code for my MEAN aka BEAM stack example.
+So here it is - sample code for my MEAN aka BEAM stack examples.
