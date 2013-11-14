@@ -1,0 +1,16 @@
+<ul class="nav navbar-nav">
+    <li >
+        <a href="#/app/users/{{TmtUsers.user._id}}/views/{{TmtViews.viewDef._id}}/pages/"  >{{TmtViews.currentCollection.name}} </a>
+    </li>
+</ul>
+
+<!-- List of Views for Current Collection -->
+<ul class="nav navbar-nav">
+    <li >
+        <a href="#/app/users/{{TmtUsers.user._id}}/views/{{TmtViews.viewDef._id}}/pages/" >{{TmtViews.currentView.name}}</a>
+    </li>
+</ul>
+
+<!-- Show currently signed on user -->
+<ng-include src="menuLocation+'tmt_user_menu.html'"></ng-include>
+

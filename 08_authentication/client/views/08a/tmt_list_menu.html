@@ -1,0 +1,36 @@
+<!-- List of Collections -->
+<ul class="nav navbar-nav">
+    <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{TmtViews.currentCollection.name}} <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+            <li ng-repeat="collection in TmtUsers.user.collections" >
+                <a href="#/app/users/{{TmtUsers.user._id}}/views/{{collection.defaultView}}/pages" >
+                    <span class="glyphicon glyphicon-ok {{getSubsCollCheckmarkFont(collection._id)}}"></span>
+                    {{collection.name}}</a>
+            </li>
+            <li class="divider"></li>
+            <li><a href="#">Subscribe to New Collection</a></li>
+        </ul>
+    </li>
+</ul>
+
+<!-- List of Views for Current Collection -->
+<ul class="nav navbar-nav">
+    <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{TmtViews.currentView.name}} <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+            <li><a href="#">Edit View</a></li>
+            <li><a href="#">Print</a></li>
+            <li><a href="#">Download</a></li>
+            <li class="divider"></li>
+            <li ng-repeat="view in TmtViews.currentCollection.views" >
+                <a href="#/app/users/{{TmtUsers.user._id}}/views/{{view._id}}/pages" >
+                    <span class="glyphicon glyphicon-ok {{getViewCheckmarkFont(view._id)}}"></span>
+                    {{view.name}}</a>
+            </li>
+        </ul>
+    </li>
+</ul>
+
+<!-- Show currently signed on user -->
+<ng-include src="menuLocation+'tmt_user_menu.html'"></ng-include>
