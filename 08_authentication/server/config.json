@@ -1,0 +1,8 @@
+{
+  "mongoDB" :  {
+    "connectionString" : "mongodb://localhost:27017/tmt"
+  },
+  "listenPort" : 3000,
+  "cookieSecret" : "this is a cookie secret",
+  "sessionSecret" : "this is a session secret"
+}

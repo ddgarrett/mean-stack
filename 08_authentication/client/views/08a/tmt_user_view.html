@@ -1,0 +1,36 @@
+<!-- User View -->
+
+<div class="row">
+    <div class="col-sm-8 col-md-4 col-md-offset-2">
+
+        <form name="userForm">
+
+            <div class="form-group" >
+                <label >First Name</label>
+                <input type="text" class="form-control"
+                       ng-required="true"
+                       ng-model="editableUser.fName"
+                       ng-disabled="fieldDisabled" >
+            </div>
+
+            <div class="form-group" >
+                <label >Last Name</label>
+                <input type="text" class="form-control"
+                       ng-required="true"
+                       ng-model="editableUser.lName"
+                       ng-disabled="fieldDisabled" >
+            </div>
+
+
+            <div class="row">
+                <div class="col-xs-4 ">
+                    <button type="submit" class="btn btn-primary"  ng-click="buttonOneFunction()">{{buttonOneName}}</button>
+                </div>
+                <div class="col-xs-4 col-xs-offset-4">
+                    <button type="button" class="btn"  ng-click="buttonTwoFunction()">{{buttonTwoName}}</button>
+                </div>
+            </div>
+            <h3><span class="label label-warning" ng-show="errorMessage" >{{errorMessage}}</span></h3>
+        </form>
+    </div>
+</div>

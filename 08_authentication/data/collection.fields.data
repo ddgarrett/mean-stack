@@ -1,0 +1,42 @@
+collection	name	header	type	default	required	editable	values
+music	_id	ID	id		TRUE	FALSE	
+music	song	Song	string		TRUE	TRUE	
+music	diskLocation	Location	string		FALSE	TRUE	
+books	_id	ID	id		TRUE	FALSE	
+books	title	Title	string		TRUE	TRUE	
+books	author	Author	string		FALSE	TRUE	
+trains	_id	ID	id		TRUE	FALSE	
+trains	catgy	Catgy	string		FALSE	TRUE	
+trains	type	Type	string		FALSE	TRUE	
+trains	subType	Sub Type	string		FALSE	TRUE	
+trains	description	Description	string		FALSE	TRUE	
+trains	rr	RR	string		FALSE	TRUE	
+trains	roadNbr	Road Nbr	string		FALSE	TRUE	
+trains	color	Color	string		FALSE	TRUE	
+trains	markings	Markings	string		FALSE	TRUE	
+trains	coupler	Coupler	string		FALSE	TRUE	
+trains	truck	Truck	string		FALSE	TRUE	
+trains	scale	Scale	string		FALSE	TRUE	
+trains	material	Material	string		FALSE	TRUE	
+trains	mfgName	Mfg Name	string		FALSE	TRUE	
+trains	prodLine	Prod Line	string		FALSE	TRUE	
+trains	modNbr	Mod Nbr	string		FALSE	TRUE	
+trains	catlg1	Catlg 1	string		FALSE	TRUE	
+trains	catlg1Nbr	Catlg 1 Nbr	string		FALSE	TRUE	
+trains	catlg2	Catlg 2	string		FALSE	TRUE	
+trains	catlgnbr2	Catlg 2 Nbr	string		FALSE	TRUE	
+trains	upc	UPC	string		FALSE	TRUE	
+trains	purchDt	Purch Dt	date		FALSE	TRUE	
+trains	purchFrom	Purch From	string		FALSE	TRUE	
+trains	cost	Cost	money		FALSE	TRUE	
+trains	condition	Condition	string		FALSE	TRUE	
+trains	location	Location	string		FALSE	TRUE	
+trains	serNbr	Ser Nbr	string		FALSE	TRUE	
+trains	value	Value	money		FALSE	TRUE	
+trains	wishList	Wish List	boolean		FALSE	TRUE	
+trains	forSale	For Sale	boolean		FALSE	TRUE	
+trains	priceOffer	Price Offer	money		FALSE	TRUE	
+trains	saleDate	Sales Date	date		FALSE	TRUE	
+trains	soldTo	Sold To	string		FALSE	TRUE	
+trains	saleBase	Sale Base	money		FALSE	TRUE	
+trains	salesTax	Sales Tax	money		FALSE	TRUE	
