@@ -1,0 +1,80 @@
+<!-- TODO: Main Menu  -->
+
+<!-- Show only if user is NOT Signed On -->
+<span ng-hide="dataCache.user.signedOn">
+
+    <!-- Sign On Existing User -->
+    <ul class="nav navbar-nav">
+        <li >
+            <a href="{{signOnPrefix}}#/signOn/"  >Sign On </a>
+        </li>
+    </ul>
+
+    <!-- Sign Up a New User -->
+    <ul class="nav navbar-nav">
+        <li >
+            <a href="{{signOnPrefix}}#/signUp/" >Sign Up</a>
+        </li>
+    </ul>
+
+    <!-- Help Topics -->
+    <ul class="nav navbar-nav ">
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Help<b class="caret"></b></a>
+            <ul class="dropdown-menu">
+                <li><a href="#/help/faq">FAQ</a></li>
+                <li><a href="#/help/contact">Contact</a></li>
+                <li class="divider"></li>
+                <li><a href="#/help/about">About</a></li>
+            </ul>
+        </li>
+    </ul>
+
+</span>
+
+<!-- Show only if User is Signed On -->
+<span ng-show="dataCache.user.signedOn">
+
+    <!-- List of Meeting Views -->
+    <ul class="nav navbar-nav">
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Meetings <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+                <li ng-repeat="(type,title) in {current:'Current', future:'Future', past:'Past'}" >
+                    <a href="#/users/{{dataCache.user._id}}/meetings/{{type}}" >
+                        {{title}}</a>
+                </li>
+                <li class="divider"></li>
+                <li><a href="#/users/{{dataCache.user._id}}/meetings/0/new">New Meeting</a></li>
+                <li class="divider"></li>
+                <li><a href="/api/users/{{dataCache.user._id}}/downloads">Download</a></li>
+            </ul>
+        </li>
+    </ul>
+
+    <!-- Help Topics -->
+    <ul class="nav navbar-nav ">
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Help<b class="caret"></b></a>
+            <ul class="dropdown-menu">
+                <li><a href="#/help/faq">FAQ</a></li>
+                <li><a href="#/help/contact">Contact</a></li>
+                <li class="divider"></li>
+                <li><a href="#/help/about">About</a></li>
+            </ul>
+        </li>
+    </ul>
+
+    <!-- User Menu -->
+    <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{dataCache.user.fName}} {{dataCache.user.lName}}<b class="caret"></b></a>
+            <ul class="dropdown-menu">
+                <li><a href="#/users/{{dataCache.user._id}}">Profile</a></li>
+                <li class="divider"></li>
+                <li><a href="#/signOff/">Sign Off</a></li>
+            </ul>
+        </li>
+    </ul>
+
+</span>

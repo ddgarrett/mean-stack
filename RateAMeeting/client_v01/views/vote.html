@@ -1,0 +1,72 @@
+<!-- Vote View -->
+<div class="row">
+    <div class="col-sm-8 col-md-4 col-md-offset-2">
+        <h4>{{prompt}}</h4>
+
+
+        <form name="voteForm">
+            <div class="row">
+                <div class="form-group col-xs-4 col-sm-4 col-md-6">
+                    <input type="tel" class="form-control"  id="voteIdInput" placeholder="nnn nnn"
+                           required ng-model="voteId" name="voteIdInput" >
+                </div>
+                <div class="col-xs-3 col-md-4 col-xs-offset-2">
+                    <button type="submit" class="btn"
+                            ng-click="verifyMeeting()">Verify Meeting</button>
+                </div>
+            </div>
+
+            <h3 ng-show="errorMessage" ><span class="label label-warning" >{{errorMessage}}</span></h3>
+
+            <h4 ng-show="dataCache.vote.description" >
+                {{dataCache.vote.date}} - {{dataCache.vote.description}}</h4>
+
+            <ul class="pagination marginAbove-1">
+
+                <li ng-repeat="block in dataCache.voteOptions">
+                    <a class="voteBlock" ng-click="saveVote(block.vote)">{{block.myValue}}</a>
+                </li>
+
+            </ul>
+
+        </form>
+    </div>
+
+</div>
+
+<div class="row" >
+    <div class="col-sm-8 col-md-6 col-md-offset-2">
+       Did your audience find your meeting or presentation useful? <br>
+       How will you know unless you actually measure it?<br>
+        <br>
+        No long surveys, no complex links, just:
+        <ol>
+            <li>Provide your audience two easy to remember numbers, example: <b>340-562</b></li>
+            <li>Direct them to <b>rateAMeeting.com</b></li>
+            <li>They enter the two numbers and select a 1-5 rating</li>
+        </ol>
+
+        <p><b>It's that simple!</b> Make sure that your meetings are worthwhile.
+            <a href="{{signOnPrefix}}#/signUp/" ><b>It's free!</b> Sign up today.</a></p>
+    </div>
+</div>
+
+<div class="row padAbove-4">
+    <div class="col-sm-8 col-md-6 col-md-offset-2">
+        “If you had to identify, in one word, the reason why the human race has not achieved,
+        and never will achieve, its full potential, that word would be 'meetings'.”<br>
+        ― Dave Barry
+    </div>
+</div>
+
+<div class="row padAbove-4" >
+    <div class="col-sm-8 col-md-6 col-md-offset-2 padAbove-4">
+        <b>NOTE: </b>
+        <ul>
+            <li>This site is still early Beta</li>
+            <li>To see the latest features go to <a href="#/help/about" >Help... About</a></li>
+            <li>Frequently Asked Questions at <a href="#/help/faq" >Help... FAQ</a></li>
+            <li>For more information, questions, etc. <a href="#/help/contact">Contact us...</a></p></li>
+        </ul>
+    </div>
+</div>

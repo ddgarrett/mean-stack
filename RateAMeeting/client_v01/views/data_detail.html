@@ -1,0 +1,107 @@
+<!-- Data Detail View -->
+
+<div class="row">
+    <div class="col-sm-8 col-sm-6 col-md-4 col-sm-offset-1 col-md-offset-2">
+
+        <h3 ng-show="title"><b>{{title}}</b></h3>
+
+        <form name="detailsForm" class="css-form padAbove-4" novalidate>
+
+            <div ng-repeat="field in  dataCache.detailView">
+                <label >{{field.header}}</label>
+
+                <div ng-switch="fieldDisabled">
+                    <div ng-switch-when="false">
+                        <div ng-switch="field.editable">
+                            <div ng-switch-when="true" class="form-group" ng-switch="field.type">
+                                <div ng-switch-when="date">
+                                    <input  datepicker class="form-control"
+                                            ng-pattern="/(\d+)(-|\/)(\d+)(?:-|\/)(?:(\d+)\s+(\d+):(\d+)(?::(\d+))?(?:\.(\d+))?)?/"
+                                            placeholder="{{field.placeholder}}"
+                                            ng-required="field.required"
+                                            ng-model="editableDetail[field.name]">
+                                </div>
+                                <div ng-switch-when="email">
+                                    <input type="email" class="form-control"
+                                           placeholder="{{field.placeholder}}"
+                                           ng-required="field.required"
+                                           ng-model="editableDetail[field.name]" >
+                                </div>
+                                <div ng-switch-when="password">
+                                    <input type="password" class="form-control"
+                                           placeholder="{{field.placeholder}}"
+                                           ng-required="field.required"
+                                           ng-model="editableDetail[field.name]" >
+                                </div>
+                                <div ng-switch-when="textArea">
+                                    <textArea class="form-control"
+                                           ng-required="field.required"
+                                           ng-model="editableDetail[field.name]"
+                                           rows="{{field.rows}}" cols="{{field.cols}}">
+                                    </textArea>
+                                </div>
+                                <div ng-switch-when="select">
+                                    <select class="form-control"
+                                           ng-required="field.required"
+                                           ng-model="editableDetail[field.name]"
+                                           ng-options="option for option in field.options">
+                                        <option value="">{{field.placeholder}}</option>
+                                    </select>
+                                </div>
+                                <div ng-switch-default>
+                                    <input type="text" class="form-control"
+                                           placeholder="{{field.placeholder}}"
+                                           ng-required="field.required"
+                                           ng-model="editableDetail[field.name]" >
+                                </div>
+                            </div>
+
+                            <!-- display only version of field -->
+                            <div ng-switch-default  class="form-group">
+                                <label class="form-control non-editable" ng-switch="field.type">
+                                    <span ng-switch-when="voteLink">
+                                        <a href="{{editableDetail[field.name]}}">
+                                            {{editableDetail[field.name]}} </a>
+                                    </span>
+                                    <span ng-switch-default>
+                                         {{editableDetail[field.name]}}
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- display only version of field -->
+                    <div ng-switch-default>
+                        <div class="form-group">
+                            <label class="form-control non-editable" ng-switch="field.type">
+                                <span ng-switch-when="voteLink">
+                                    <a href="{{editableDetail[field.name]}}">
+                                        {{editableDetail[field.name]}} </a>
+                                </span>
+                                <span ng-switch-default>
+                                     {{editableDetail[field.name]}}
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-3 col-md-4">
+                    <button type="submit" class="btn btn-primary"
+                            ng-click="buttons[0].function()">{{buttons[0].name}}</button>
+                </div>
+                <div class="col-xs-3 col-md-4 col-xs-offset-2">
+                    <button type="button" class="btn"
+                        ng-click="buttons[1].function()">{{buttons[1].name}}</button>
+                </div>
+            </div>
+            
+            <h3><span class="label label-warning" ng-show="errorMessage" >{{errorMessage}}</span></h3>
+        </form>
+    </div>
+</div>
+

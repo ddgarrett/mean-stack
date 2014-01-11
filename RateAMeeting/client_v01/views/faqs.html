@@ -1,0 +1,39 @@
+<!-- FAQ -->
+
+<div class="row">
+
+    <div class="col-sm-8 col-lg-6 col-xl-4 col-md-offset-2" >
+
+        <h4><b>Frequently Asked Questions (FAQ)</b></h4>
+
+        <!-- FAQs -->
+        <ul class="row">
+            <li ng-repeat="faq in faqs" ng-click="toggleFaq(faq.id)" class="padAbove-3 pointerCursor">
+                <b>{{faq.title}}</b>
+                <span ng-hide="faq.visible" class="glyphicon glyphicon-chevron-right"></span>
+                <span ng-show="faq.visible" class="glyphicon glyphicon-chevron-down"></span>
+                <p ng-show="faq.visible" >{{faq.text}}</p>
+            </li>
+        </ul>
+
+        <!-- Show All, Hide All Buttons -->
+        <div class="padAbove-4">
+            <div class="col-xs-3">
+                <button type="button" class="btn"
+                        ng-click="setAllVisible(true)">Show All</button>
+            </div>
+            <div class="col-xs-3 col-xs-offset-2">
+                <button type="button" class="btn"
+                        ng-click="setAllVisible(false)">Hide All</button>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<div class="row padAbove-4">
+    <div class="col-sm-8 col-lg-6 col-xl-4 col-md-offset-2 padAbove-4" >
+        <p>Still have a question? <a href="#/help/contact">Contact us...</a></p>
+    </div>
+</div>

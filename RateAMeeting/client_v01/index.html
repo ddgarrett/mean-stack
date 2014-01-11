@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html ng-app="ramModule">
+<head>
+    <title>Rate A Meeting</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css">
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+
+    <script src="js/module.js"></script>
+    <script src="js/routes.js"></script>
+    <script src="js/controller/userController.js"></script>
+    <script src="js/controller/meetingListController.js"></script>
+    <script src="js/controller/meetingDetailController.js"></script>
+    <script src="js/controller/meetingVoteController.js"></script>
+    <script src="js/controller/helpController.js"></script>
+
+    <script src="js/dao/faqsDao.js"></script>
+    <script src="js/dao/feedbackDao.js"></script>
+    <script src="js/dao/usersDao.js"></script>
+    <script src="js/dao/meetingsDao.js"></script>
+
+    <script src="js/utility/dataCache.js"></script>
+    <script src="js/utility/datepicker.js"></script>
+    <script src="js/utility/logging.js"></script>
+    <script src="js/utility/utilityService.js"></script>
+
+    <style>
+        .non-editable {
+            background-color: #f7f7f7;
+            color: #666666;}
+
+        body { padding-top: 70px;
+               padding-left: 6px;}
+
+        .css-form input.ng-invalid.ng-dirty {
+            background-color: #fadd87;
+        }
+
+        .css-form input.ng-valid.ng-dirty {
+            background-color: #eaedfa;
+        }
+
+        .voteBlock {cursor: pointer; }
+
+        .txt-left   {text-align: left}
+        .txt-center {text-align: center}
+        .txt-right  {text-align: right}
+
+        .marginAbove-1 {margin-top: 5px;}
+
+        .padAbove-1 {padding-top: 5px;}
+        .padAbove-2 {padding-top: 10px;}
+        .padAbove-3 {padding-top: 15px;}
+        .padAbove-4 {padding-top: 20px;}
+
+        .pointerCursor {cursor: pointer;}
+
+    </style>
+
+</head>
+<body  ng-controller="mainController">
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".collapsible-menu-list">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-home"></span> &nbsp;Rate A Meeting</a>
+    </div>
+
+    <!-- Collapsible portion of the menu for toggling -->
+    <div class="collapse navbar-collapse collapsible-menu-list">
+        <ng-include src="'views/main_menu.html'"></ng-include>
+    </div>
+</nav>
+
+<!-- Main View -->
+<div ng-view></div>
+
+<div class="panel panel-warning" ng-show="statusMessage">
+    <div class="panel-heading">{{statusMessage}}</div>
+</div>
+
+</body>
+</html>
